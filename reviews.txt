@@ -1,0 +1,9 @@
+// Данные взяты из следующего датасета https://huggingface.co/datasets/sealuzh/app_reviews
+
+Faster & nicer The new version compatible with Nougat looks awesome! It's also incredibly much faster on connection (I wish the Ubuntu client connected that quickly!). Really nice job on the update thanks for updating it to work on Nougat too :)
+
+Doesn't even connect. Just returns invalid username/password
+
+Could handle disconnects better This is a well made application in general and works great when you have a solid connection. But iffy connections can be very frustrating when the screen goes back to login mid-sentence. Also highlighting should never use the same color as a username.
+
+Good app. This app is really good. I only gave it 4 stars cause the menu options blur badly while scrolling. Other than that it's perfect and very helpful.
