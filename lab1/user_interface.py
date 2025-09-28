@@ -24,6 +24,10 @@ class SentimentAnalyzerGUI(QMainWindow):
         self.setWindowTitle("Sentiment API Tester")
         self.setGeometry(100, 100, 600, 400)
 
+        app_font = QApplication.font()
+        app_font.setPointSize(10)
+        QApplication.setFont(app_font)
+
         # Основной виджет
         main_widget = QWidget()
         self.setCentralWidget(main_widget)
@@ -35,6 +39,7 @@ class SentimentAnalyzerGUI(QMainWindow):
         # Поле ввода текста
         self.text_input = QLineEdit()
         self.text_input.setPlaceholderText("Введите текст")
+        self.text_input.setGeometry(100,100,200,400)
         layout.addWidget(self.text_input)
 
         # Layout для кнопок
@@ -158,6 +163,18 @@ class SentimentAnalyzerGUI(QMainWindow):
         # Включаем кнопки обратно
         self.enable_all_buttons()
 
+    def disable_all_buttons(self):
+        """Отключить все кнопки"""
+        self.btn_ninjas.setEnabled(False)
+        self.btn_sentiment.setEnabled(False)
+        self.btn_compare.setEnabled(False)
+
+    def enable_all_buttons(self):
+        """Включить все кнопки"""
+        self.btn_ninjas.setEnabled(True)
+        self.btn_sentiment.setEnabled(True)
+        self.btn_compare.setEnabled(True)
+
     def format_comparison_result(self, comparison: dict) -> str:
         """Форматирует результат сравнения API для его вывода"""
         separator = "\n" + "=" * 30
@@ -171,9 +188,9 @@ class SentimentAnalyzerGUI(QMainWindow):
             result_text += f"\nSentiment Analysis result: {sentiment_sent}"
 
             if comparison['results_match']:
-                result_text += "\nОба API вернули один результат"
+                result_text += "\n\nОба API вернули один результат"
             else:
-                result_text += "\nAPI вернули разные результаты"
+                result_text += "\n\nAPI вернули разные результаты"
         else:
             result_text += f"\nСтатус сравнения: {comparison['comparison_status']}"
             if comparison['ninjas_sentiment']:
@@ -182,18 +199,6 @@ class SentimentAnalyzerGUI(QMainWindow):
                 result_text += f"\nSentiment Analysis: {comparison['sentiment_analysis_sentiment']}"
 
         return result_text
-
-    def disable_all_buttons(self):
-        """Отключить все кнопки"""
-        self.btn_ninjas.setEnabled(False)
-        self.btn_sentiment.setEnabled(False)
-        self.btn_compare.setEnabled(False)
-
-    def enable_all_buttons(self):
-        """Включить все кнопки"""
-        self.btn_ninjas.setEnabled(True)
-        self.btn_sentiment.setEnabled(True)
-        self.btn_compare.setEnabled(True)
 
 
 def main():
