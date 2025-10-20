@@ -39,7 +39,6 @@ class SentimentAnalyzerGUI(QMainWindow):
         # Поле ввода текста
         self.text_input = QLineEdit()
         self.text_input.setPlaceholderText("Введите текст")
-        self.text_input.setGeometry(100,100,200,400)
         layout.addWidget(self.text_input)
 
         # Layout для кнопок

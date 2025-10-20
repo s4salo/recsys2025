@@ -26,7 +26,7 @@ def make_api_request_get(url: str, headers: dict, params: dict = None) -> dict:
 def make_api_request_post(url: str, headers: dict, payload: dict = None) -> dict:
     """
     Функция для выполнения POST-запроса к API и возврата JSON-ответа
-    :url: URL-ссылка эндпойнта
+    :url: Эндпойнт
     :headers: Заголовки запроса
     :payload: Данные для запроса
     :return: Словарь с ответом
