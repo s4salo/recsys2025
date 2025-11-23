@@ -18,8 +18,7 @@ async def query_llm_api(url: str, payload: dict) -> Any | None:
 
     try:
         async with aiohttp.ClientSession() as session:
-            async with session.post(url, headers=headers, json=payload,
-                                    timeout=aiohttp.ClientTimeout(total=120)) as resp:
+            async with session.post(url, headers=headers, json=payload,timeout=aiohttp.ClientTimeout(total=120)) as resp:
                 resp.raise_for_status()
                 return await resp.json()
     except Exception as e:
@@ -58,6 +57,7 @@ async def get_llama3_response(user_query: str, context: str = "") -> str:
     }
 
     response = await query_llm_api(config["llama3_url"], payload)
+    print(response["result"])
     if response and "result" in response:
         return response["result"]
     return "Не удалось получить ответ от LLaMA3 API."

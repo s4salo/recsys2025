@@ -31,8 +31,8 @@ async def start_command(message: Message):
         "Посоветуй рецепт шоколадного печенья.\n"
         "«Я люблю итальянскую кухню, но пицца и паста надоели — что попробовать еще?»\n\n"
         "Также, можешь выбрать модель, с помощью которой я буду думать:\n"
-        "/setmodel gpt — GPT-4\n"
-        "/setmodel llama — LLAMA 3"
+        "/setmodel gpt — GPT\n"
+        "/setmodel llama — LLAMA"
     )
 
 
