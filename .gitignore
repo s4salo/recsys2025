@@ -45,3 +45,5 @@ htmlcov/
 # Other
 .DS_Store
 Thumbs.db
+*.docx
+*.pdf

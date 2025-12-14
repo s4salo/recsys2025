@@ -25,7 +25,7 @@ def cosine_similarity(ratings1: dict, ratings2: dict) -> float:
         r2 = ratings2[u]
         dot += r1 * r2
 
-    # Вычислим нормы по оценкам
+    # Нормы по оценкам
     for u in common_users:
         norm1 += ratings1[u] ** 2
         norm2 += ratings2[u] ** 2

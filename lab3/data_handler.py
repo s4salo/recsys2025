@@ -156,7 +156,6 @@ class DataHandler:
         if len(movie_info) == 0:
             return genres
         for genre in genre_columns:
-            # значения в файле 0/1
             if movie_info[genre].values[0] == 1:
                 genres.append(genre)
         return genres
@@ -184,7 +183,6 @@ class DataHandler:
         weights = []
         for movie, user_ratings in self.movie_ratings.items():
             all_movies.append(movie)
-            # небольшая форма регуляризации: +1 для фильмов без оценок
             weights.append(len(user_ratings) ** 2 + 1)
 
         popular_movies = random.choices(all_movies, weights=weights, k=1)
